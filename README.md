@@ -6,7 +6,7 @@ A personal habit, routine, and schedule manager created to help me manage severa
 
 > ###Qualifications (with apologies to Walt Disney & co.):
 > 1. A cheery disposition. I am never cross.
-> 2. Rosy cheecks. Obviously.
+> 2. Rosy cheeks. Obviously.
 > 3. Plays games, all sorts. I'm sure the children will find my games extremely diverting.
 > 4. I am kind, but extremely firm.
 
