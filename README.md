@@ -1,107 +1,66 @@
-# Huginn.  Your agents are standing by.
+Poppins
+=======
 
-## What is Huginn?
+Poppins is a digital nanny/governess, here to set things in order.
+A personal habit, routine, and schedule manager created to help me manage several ADHD issues at once.
 
-Huginn is a system for building agents that perform automated tasks for you online.  They can read the web, watch for events, and take actions on your behalf.  Huginn's Agents create and consume events, propagating events along a directed event flow graph.  Think of it as Yahoo! Pipes plus IFTTT on your own server.  You always know who has your data.  You do.
+> ###Qualifications (with apologies to Walt Disney & co.):
+> 1. A cheery disposition. I am never cross.
+> 2. Rosy cheeks. Obviously.
+> 3. Plays games, all sorts. I'm sure the children will find my games extremely diverting.
+> 4. I am kind, but extremely firm.
 
-![the origin of the name](doc/imgs/the-name.png)
+Changing habits is hard.
+Over time, they become hardened neural pathways in our brains and almost literally require rewiring.
+What's more, going against our default behavior (habitual response) saps our willpower.
+Poppins is an attempt to change multiple habits at once, mitigating the negative effects, rewarding successes, punish failures, and help others support your efforts.
 
-#### This is just getting started, but here are some of the things that you can do right now with Huginn:
+Poppins is initially meant to tie several systems together: Find My iPhone, RescueTime, the Twist app, Google Calendar, and anything else that can be integrated with less effort than it'd take to build.
 
-* Watch for air travel deals
-* List terms you care about and receive emails when their occurrence on Twitter changes drastically.  (For example, want to know when something interesting has happened in the world of Machine Learning?  Huginn will watch the term "machine learning" on Twitter and tell you when there is a large spike.)
-* Track the weather and get an email when it's going to rain (or snow) tomorrow
-* Follow your project names on Twitter and get updates when people mention them
-* Scrape websites and receive emails when they change
-* Track your location over time
+The easiest way to describe Poppins is by walking you through a day with her:
 
-Follow [@tectonic](https://twitter.com/tectonic) for updates as Huginn evolves, and join us in \#huginn on Freenode IRC to discuss the project.
+**AM**
+- 8:30     Alarm on phone goes off, but I don't hear it.
+- 8:40     Poppins detects that I haven't used my phone yet, so sends a different & louder alarm until I do.
+- 8:40:05  I shoot up awake, both thankful for and cursing the existence of Poppins.
+- 8:41     Poppins messages me: "Good morning! You've got about 30 minutes left before you need to have started your morning walk."
+- 8:56     Poppins messages me: "Just a heads-up that you've got 15 minutes left to start walking...or else!"
+- 9:00     I go outside and start walking around the block, which Poppins detects because I've geofenced my home.
+- 9:10     Poppins: "You finished your walk...congrats! You can head home now & start the day."
+...
+- 11:20    Poppins: "You've been reading Hacker News for 10 minutes now. Time to get back to work."
+- 11:25    Poppins: "Since you're still slacking, I'm locking your phone & only letting you access Stack Overflow and Google search results for the next hour."
 
-## Examples
+**PM**
+- 2:00     Poppins messages me letting me know I have a meeting in an hour, who it's with, where it's at, and that I need to leave by 2:30 to be on time.
+- 2:15     Poppins: "Time to pack up & get ready to leave for your meeting!"
+- 2:16     Poppins sends remote command to laptop to hibernate & locks my phone.
+- 2:35     Poppins detects I still haven't left yet, sends a message to who I'm meeting with to let them know I'm running late.
+...
+- 6:30     Poppins: "Time to make dinner and eat!"
+...
+- 11:00    Poppins: "Time to shut down everything and get ready for bed!"
+- 11:05    Poppins hibernates laptop and locks the phone.
+...
+- 2:00A    Poppins detects laptop or phone is being used & responds by sending hibernate/lock command.
 
-Please checkout the [Huginn Introductory Screencast](http://vimeo.com/61976251)!
+# Contributing
 
-And now, some example screenshots.  Below them are instructions to get you started.
+I really need Poppins in my life and I'm sure several other people feel the same way, to varying degrees. It's very rare that I complete projects when working alone and finishing a project in a reasonable amount of time is even rarer.
 
-![Example list of agents](doc/imgs/your-agents.png)
+In short, I can't build this alone. Here's how you can currently help (this list may be different from the last time you read it):
 
-![Event flow diagram](doc/imgs/diagram.png)
+- Click the watch button in the upper right corner of the repo to get update notifications
+- Create issues for feature requests, architecture suggestions, etc. Share your ideas.
+- Fork this repo and start building on it once I commit the initial code.
 
-![Detecting peaks in Twitter](doc/imgs/peaks.png)
+# Components
 
-![Logging your location over time](doc/imgs/my-locations.png)
+## Server
+- Find My iPhone API wrapper to message/track user and lock iPhone (eg. Sosumi or any of its ports: [PHP](https://github.com/tylerhall/sosumi/), [python](https://github.com/pearkes/findi/), [Ruby](https://github.com/hpop/rosumi))
+- Google Calendar API client to know schedule
+- RescueTime API to detect when getting distracted
+- Task Scheduler that supports scheduling with recurrences and/or intervals
 
-![Making a new agent](doc/imgs/new-agent.png)
-
-## Getting Started
-
-### Quick Start
-
-If you just want to play around, you can simply clone this repository, then perform the following steps:
-
-* Copy `.env.example` to `.env` (`cp .env.example .env`) and edit `.env`, at least updating the `APP_SECRET_TOKEN` variable.
-* Run `rake db:create`, `rake db:migrate`, and then `rake db:seed` to create a development MySQL database with some example seed data.
-* Run `foreman start`, visit [http://localhost:3000/][localhost], and login with the username of `admin` and the password of `password`.
-* Setup some Agents!
-
-If you need more detailed instructions, see the [Novice setup guide][novice-setup-guide].
-
-[localhost]: http://localhost:3000/
-[novice-setup-guide]: https://github.com/cantino/huginn/wiki/Novice-setup-guide
-
-### Real Start
-
-Follow these instructions if you wish to deploy your own version of Huginn or contribute back to the project.  GitHub doesn't make it easy to work with private forks of public repositories, so I recommend that you follow the following steps:
-
-* Make a public fork of Huginn. If you can't create private Github repositories, you can skip the steps below. Just follow the *Quick Start* steps above and make pull requests when you want to contribute a patch. 
-* Make a private, empty GitHub repository called `huginn-private`
-* Duplicate your public fork into your new private repository (via [GitHub's instructions](https://help.github.com/articles/duplicating-a-repository)):
-
-        git clone --bare git@github.com:you/huginn.git
-        cd huginn.git
-        git push --mirror git@github.com:you/huginn-private.git
-        cd .. && rm -rf huginn.git
-
-* Checkout your new private repository.
-* Add your Huginn public fork as a remote to your new private repository (`huginn-private`):
-
-        git remote add public git@github.com:you/huginn.git
-
-* Run the steps from *Quick Start* above to configure your copy of Huginn.
-* When you want to contribute patches, do a remote push from your private repository to your public fork of the relevant commits, then make a pull request to this repository.
-
-## Deployment
-
-Please see [the Huginn Wiki](https://github.com/cantino/huginn/wiki#deploying-huginn) for detailed deployment strategies for different providers.
-
-### Optional Setup
-
-#### Enable the WeatherAgent
-
-In order to use the WeatherAgent you need an [API key with Wunderground](http://www.wunderground.com/weather/api/). Signup for one and then change value of `api_key: your-key` in your seeded WeatherAgent.
-
-#### Logging your location to the UserLocationAgent
-
-You can use [Post Location](https://github.com/cantino/post_location) on your iPhone to post your location to an instance of the UserLocationAgent.  Make a new one to see instructions.
-
-#### Enable DelayedJobWeb for handy delayed_job monitoring and control
-
-* Edit `config.ru`, uncomment the DelayedJobWeb section, and change the DelayedJobWeb username and password.
-* Uncomment `match "/delayed_job" => DelayedJobWeb, :anchor => false` in `config/routes.rb`.
-* Uncomment `gem "delayed_job_web"` in Gemfile and run `bundle`.
-
-#### Disable SSL
-
-We assume your deployment will run over SSL. This is a very good idea! However, if you wish to turn this off, you'll probably need to edit `config/initializers/devise.rb` and modify the line containing `config.rememberable_options = { :secure => true }`.  You will also need to edit `config/environments/production.rb` and modify the value of `config.force_ssl`.
-
-## License
-
-Huginn is provided under the MIT License.
-
-## Contribution
-
-Huginn is a work in progress and is hopefully just getting started.  Please get involved!  You can [add new Agents](https://github.com/cantino/huginn/wiki/Creating-a-new-agent), expand the [Wiki](https://github.com/cantino/huginn/wiki), or help us simplify and strengthen the Agent API or core application.
-
-Please fork, add specs, and send pull requests!
-
-[![Build Status](https://travis-ci.org/cantino/huginn.png)](https://travis-ci.org/cantino/huginn) [![Code Climate](https://codeclimate.com/github/cantino/huginn.png)](https://codeclimate.com/github/cantino/huginn)
+## Client
+- Something to run in Windows 7 that will allow server to restrict browsing, as well as application execution
