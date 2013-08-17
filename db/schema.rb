@@ -72,19 +72,6 @@ ActiveRecord::Schema.define(:version => 20130509053743) do
   add_index "links", ["receiver_id", "source_id"], :name => "index_links_on_receiver_id_and_source_id"
   add_index "links", ["source_id", "receiver_id"], :name => "index_links_on_source_id_and_receiver_id"
 
-  create_table "rails_admin_histories", :force => true do |t|
-    t.text     "message"
-    t.string   "username"
-    t.integer  "item"
-    t.string   "table"
-    t.integer  "month",      :limit => 2
-    t.integer  "year",       :limit => 8
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
-  end
-
-  add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
-
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "",    :null => false
     t.string   "encrypted_password",     :default => "",    :null => false
