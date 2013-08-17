@@ -29,6 +29,8 @@ GEM
       activesupport (= 3.2.13)
       arel (~> 3.0.2)
       tzinfo (~> 0.3.29)
+    activerecord-postgresql-adapter (0.0.1)
+      pg
     activeresource (3.2.13)
       activemodel (= 3.2.13)
       activesupport (= 3.2.13)
@@ -134,6 +136,7 @@ GEM
       multi_xml (~> 0.5)
       rack (~> 1.2)
     orm_adapter (0.4.0)
+    pg (0.16.0)
     polyglot (0.3.3)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
@@ -245,6 +248,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-postgresql-adapter
   bootstrap-kaminari-views
   coffee-rails (~> 3.2.1)
   daemons
@@ -263,6 +267,7 @@ DEPENDENCIES
   kramdown
   mysql2
   nokogiri
+  pg
   pry
   rails
   rake
