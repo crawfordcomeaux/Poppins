@@ -1,10 +1,8 @@
-require 'spec_helper'
-
 describe Agents::TranslationAgent do
     before do
         @valid_params = {
             :name    => "somename",
-            :options => {           
+            :options => {
                 :client_id     => "xxxxxx",
                 :client_secret => "xxxxxx" ,
                 :to            => "fi",
@@ -54,7 +52,7 @@ describe Agents::TranslationAgent do
             Agents::TranslationAgent.async_receive @checker.id, [@event.id]
             @checker.reload.should be_working
             two_days_from_now = 2.days.from_now
-            stub(Time).now { two_days_from_now }  
+            stub(Time).now { two_days_from_now }
             @checker.reload.should_not be_working
         end
     end

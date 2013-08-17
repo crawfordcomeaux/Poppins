@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Agents::AdiosoAgent do
 	before do
 		stub_request(:get, /parse/).to_return(:body => File.read(Rails.root.join("spec/data_fixtures/adioso_parse.json")), :status => 200, :headers => {"Content-Type" => "text/json"})

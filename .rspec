@@ -1,0 +1,8 @@
+# Autoload spec helper
+--require spec_helper
+
+# Show more colorful RSpec results
+--color
+
+# Verbose display
+--format documentation

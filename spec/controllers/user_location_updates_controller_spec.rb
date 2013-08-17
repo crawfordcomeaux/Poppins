@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe UserLocationUpdatesController do
   before do
     @agent = Agent.build_for_type("Agents::UserLocationAgent", users(:bob), :name => "something", :options => { :secret => "my_secret" })

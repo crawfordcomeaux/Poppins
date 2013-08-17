@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Agents::EventFormattingAgent do
   before do
     @valid_params = {

@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Agents::TwitterPublishAgent do
   before do
     @opts = {

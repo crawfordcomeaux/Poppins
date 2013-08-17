@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Utils do
   describe "#unindent" do
     it "unindents to the level of the greatest consistant indention" do

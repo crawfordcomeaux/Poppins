@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Agent do
   describe ".run_schedule" do
     before do

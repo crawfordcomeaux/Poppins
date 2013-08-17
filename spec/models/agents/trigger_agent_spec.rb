@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Agents::TriggerAgent do
   before do
     @valid_params = {

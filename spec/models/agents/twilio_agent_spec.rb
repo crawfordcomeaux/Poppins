@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Agents::TwilioAgent do
   before do
     @checker = Agents::TwilioAgent.new(:name => 'somename',

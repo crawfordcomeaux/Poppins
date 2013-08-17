@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Agents::SentimentAgent do
     before do
         @valid_params = {
@@ -28,7 +26,7 @@ describe Agents::SentimentAgent do
             Agents::SentimentAgent.async_receive @checker.id, [@event.id]
             @checker.reload.should be_working
             two_days_from_now = 2.days.from_now
-            stub(Time).now { two_days_from_now }  
+            stub(Time).now { two_days_from_now }
             @checker.reload.should_not be_working
         end
     end

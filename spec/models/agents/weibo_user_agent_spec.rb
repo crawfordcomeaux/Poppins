@@ -1,11 +1,9 @@
-# encoding: utf-8 
-require 'spec_helper'
-
+# encoding: utf-8
 describe Agents::WeiboUserAgent do
   before do
     # intercept the twitter API request for @tectonic's user profile
     stub_request(:any, /api.weibo.com/).to_return(:body => File.read(Rails.root.join("spec/data_fixtures/one_weibo.json")), :status => 200)
-  
+
     @opts = {
       :uid => "123456",
       :expected_update_period_in_days => "2",

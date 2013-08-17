@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Agents::WebsiteAgent do
   before do
     stub_request(:any, /xkcd/).to_return(:body => File.read(Rails.root.join("spec/data_fixtures/xkcd.html")), :status => 200)
@@ -70,7 +68,7 @@ describe Agents::WebsiteAgent do
       event = Event.last
       event.payload[:url].should == "http://xkcd.com/about"
     end
-        
+
     describe "JSON" do
       it "works with paths" do
         json = {

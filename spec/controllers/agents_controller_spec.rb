@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe AgentsController do
   def valid_attributes(options = {})
     {

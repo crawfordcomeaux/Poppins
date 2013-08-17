@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe WebhooksController do
   class Agents::WebhookReceiverAgent < Agent
     cannot_receive_events!

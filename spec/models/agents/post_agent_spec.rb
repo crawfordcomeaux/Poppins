@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Agents::PostAgent do
     before do
         @valid_params = {
@@ -7,7 +5,7 @@ describe Agents::PostAgent do
             :options => {
                 :post_url => "http://www.example.com",
                 :expected_receive_period_in_days => 1
-            } 
+            }
         }
 
     @checker = Agents::PostAgent.new(@valid_params)
@@ -48,7 +46,7 @@ describe Agents::PostAgent do
             Agents::PostAgent.async_receive @checker.id, [@event.id]
             @checker.reload.should be_working
             two_days_from_now = 2.days.from_now
-            stub(Time).now { two_days_from_now }  
+            stub(Time).now { two_days_from_now }
             @checker.reload.should_not be_working
         end
     end
