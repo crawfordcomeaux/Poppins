@@ -13,7 +13,7 @@ A personal habit, routine, and schedule manager created to help me manage severa
 Changing habits is hard. 
 Over time, they become hardened neural pathways in our brains and almost literally require rewiring. 
 What's more, going against our default behavior (habitual response) saps our willpower.
-Poppins is an attempt to change multiple habits at once, mitigating the negative effects, rewarding successes, punish failures, and help others support your efforts.
+Poppins's goals are geared toward changing multiple habits at once, mitigating the negative effects, rewarding successes, punishing failures, and helping others support your efforts.
 
 Poppins is initially meant to tie several systems together: Find My iPhone, RescueTime, the Twist app, Google Calendar, and anything else that can be integrated with less effort than it'd take to build.
 
